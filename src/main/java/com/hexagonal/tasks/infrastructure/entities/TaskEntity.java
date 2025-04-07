@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,7 +12,7 @@ public class TaskEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private LocalDateTime creationDate;
@@ -22,7 +21,7 @@ public class TaskEntity {
     public TaskEntity() {
     }
 
-    public TaskEntity(long id, String title, String description, LocalDateTime creationDate, boolean completed) {
+    public TaskEntity(Long id, String title, String description, LocalDateTime creationDate, boolean completed) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -30,20 +29,21 @@ public class TaskEntity {
         this.completed = completed;
     }
 
-
     public static TaskEntity fromDomainModel(Task task) {
         return new TaskEntity(task.getId(), task.getTitle(), task.getDescription(), task.getCreationDate(), task.isCompleted());
     }
 
     public Task toDomainModel(){
-        return new Task(id,title,description,creationDate,completed);
+        return new Task(id, title, description, creationDate, completed);
     }
 
-    public long getId() {
+    // Getters y setters para todos los campos, incluyendo el version
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -78,4 +78,6 @@ public class TaskEntity {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+
 }

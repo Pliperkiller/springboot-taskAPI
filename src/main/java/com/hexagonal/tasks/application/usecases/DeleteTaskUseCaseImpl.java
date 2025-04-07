@@ -11,7 +11,7 @@ public class DeleteTaskUseCaseImpl implements DeleteTaskUseCase {
     }
 
     @Override
-    public boolean deteleTask(Long id) {
+    public boolean deleteTask(Long id) {
         return taskRepositoryPort.deleteById(id);
     }
 }

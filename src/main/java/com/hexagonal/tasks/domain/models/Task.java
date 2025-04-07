@@ -3,7 +3,7 @@ package com.hexagonal.tasks.domain.models;
 import java.time.LocalDateTime;
 
 public class Task {
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private LocalDateTime creationDate;
@@ -18,11 +18,11 @@ public class Task {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

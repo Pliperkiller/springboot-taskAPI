@@ -27,8 +27,8 @@ public class TaskService implements CreateTaskUseCase, RetrieveTaskUseCase, Upda
     }
 
     @Override
-    public boolean deteleTask(Long id) {
-        return deleteTaskUseCase.deteleTask(id);
+    public boolean deleteTask(Long id) {
+        return deleteTaskUseCase.deleteTask(id);
     }
 
     @Override
